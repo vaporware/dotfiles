@@ -77,3 +77,7 @@ export PATH=".git/safe/../../bin:$PATH"
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+#plugins=(git bundler gem code gup)
+
+cd /vagrant

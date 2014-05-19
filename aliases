@@ -26,9 +26,18 @@ alias cuc="bundle exec cucumber"
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias m="migrate"
-alias rk="rake"
+alias rk="noglob rake"
 alias s="rspec"
 alias z="zeus"
+#alias rake='noglob rake'
 
+function git_current_branch() {
+  git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///'
+}
+
+alias gpthis='git push origin HEAD:$(git_current_branch)'
+alias grb='git rebase -p'
+alias gup='git fetch origin && grb origin/$(git_current_branch)'
+alias gm='git merge --no-ff'
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
