@@ -80,4 +80,8 @@ export PATH=".git/safe/../../bin:$PATH"
 
 #plugins=(git bundler gem code gup)
 
+#vagrant's working RVM version
+[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm" 
+
+#common working directory, shared for vagrant VMs, like RDBox
 cd /vagrant
