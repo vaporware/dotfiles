@@ -1,4 +1,4 @@
-thoughtbot dotfiles
+vaporware dotfiles
 ===================
 
 Requirements
@@ -13,7 +13,7 @@ Install
 
 Clone onto your laptop:
 
-    git clone git://github.com/thoughtbot/dotfiles.git
+    git clone git://github.com/vpware/dotfiles.git
 
 (Or, [fork and keep your fork
 updated](http://robots.thoughtbot.com/keeping-a-github-fork-updated)).
@@ -60,8 +60,8 @@ Your `~/.gitconfig.local` might look like this:
     [pretty]
       colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
     [user]
-      name = Dan Croak
-      email = dan@thoughtbot.com
+      name = Dan Moore
+      email = dan@vaporwa.re
 
 Your `~/.zshrc.local` might look like this:
 
@@ -129,15 +129,14 @@ Shell aliases and scripts:
 Credits
 -------
 
+These dotfiles are forked from our friends at thoughtbot.
+
 Thank you, [contributors](https://github.com/thoughtbot/dotfiles/contributors)!
 Also, thank you to Corey Haines, Gary Bernhardt, and others for sharing your
 dotfiles and other shell scripts from which we derived inspiration for items
 in this project.
 
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
+Dotfiles is maintained by [vaporwa.re](http://www.vaporwa.re/)
 
-Dotfiles is maintained by [thoughtbot, inc](http://thoughtbot.com/community)
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
-
-Dotfiles is © 2009-2014 thoughtbot, inc. It is free software and may be
+It is free software and may be
 redistributed under the terms specified in the [LICENSE](LICENSE) file.
