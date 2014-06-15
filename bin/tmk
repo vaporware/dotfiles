@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# Create a rails customized tmux session named the same as current directory.
+#
+session_name=`basename $PWD`
+
+tmux new-session -s $session_name -n shell -d
+tmux send-keys -t $session_name:shell "cd $PWD" C-m
+tmux send-keys -t $session_name:shell "clear" C-m
+tmux send-keys -t $session_name:shell "g checkout master" C-m
+tmux send-keys -t $session_name:shell "gup" C-m
+tmux new-window -n console -t $session_name
+tmux send-keys -t $session_name:console "cd $PWD" C-m
+tmux send-keys -t $session_name:console "clear" C-m
+tmux send-keys -t $session_name:console "rails c" C-m
+tmux new-window -n database -t $session_name
+tmux send-keys -t $session_name:database "cd $PWD" C-m
+tmux send-keys -t $session_name:database "clear" C-m
+tmux send-keys -t $session_name:database "rails db" C-m
+tmux new-window -n logs -t $session_name
+tmux send-keys -t $session_name:logs "cd $PWD" C-m
+tmux send-keys -t $session_name:logs "clear" C-m
+tmux send-keys -t $session_name:logs "tail -f log/development.log" C-m
+tmux new-window -n staging -t $session_name
+tmux send-keys -t $session_name:staging "cd $PWD" C-m
+tmux send-keys -t $session_name:staging "clear" C-m
+tmux new-window -n production -t $session_name
+tmux send-keys -t $session_name:production "cd $PWD" C-m
+tmux send-keys -t $session_name:production "clear" C-m
+
+tmux select-window -t $session_name:shell
+tmux attach -t $session_name
