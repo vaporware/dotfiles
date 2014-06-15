@@ -16,6 +16,11 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
+set winwidth=84
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -27,6 +32,7 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 filetype plugin indent on
+execute pathogen#infect()
 
 augroup vimrcEx
   autocmd!
@@ -79,12 +85,14 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme github
+set background=dark
+colorscheme solarized
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
 set number
+set relativenumber
 set numberwidth=5
 
 " Tab completion
@@ -136,6 +144,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" open a vsplit on startup
+" au VimEnter * vsplit
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
