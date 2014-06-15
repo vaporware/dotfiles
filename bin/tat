@@ -2,6 +2,6 @@
 #
 # Attach or create tmux session named the same as current directory.
 #
-SESSION_NAME=`basename $PWD`
+session_name=`basename $PWD`
 
-tmux attach -t $SESSION_NAME || tmk
+tmux attach -t $session_name || tmake
