@@ -85,3 +85,6 @@ export PATH=".git/safe/../../bin:$PATH"
 
 #common working directory, shared for vagrant VMs, like RDBox
 cd /vagrant
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
